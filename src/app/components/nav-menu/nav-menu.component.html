@@ -1,0 +1,62 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="!(isHandset$ | async)">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Présentation</a>
+      <a mat-list-item href="#">Nos albums</a>
+      <a mat-list-item href="#">Nous contacter</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="custom-content">
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <div class="row custom-header">
+        <div class="col-2">
+          <mat-icon>home</mat-icon>
+          <span>Manaleyah</span>
+        </div>
+        <div class="col-10 header-right-block">
+          <button mat-icon-button class="header-btn"> Partager
+            <mat-icon aria-label="Example icon-button with a heart icon">share</mat-icon>
+          </button>
+          <button mat-icon-button class="header-btn"> Se connecter
+            <mat-icon aria-label="Example icon-button with a heart icon">account_circle</mat-icon>
+          </button>
+        </div>
+      </div>
+
+    </mat-toolbar>
+    <div class="row">
+      <div class="col-8 nav-bar-content-carousel-block">
+        <app-carousel></app-carousel>
+      </div>
+      <div class="col-4">
+        Right menu
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <app-dashboard></app-dashboard>
+      </div>
+    </div>
+
+    <!-- Add Content Here -->
+
+    <!--<div class="jumbotron">
+      <h1>Angular CLI v6 + Bootstrap & FontAwesome</h1>
+      <p>
+        In this tutorial you learn how to use Angular CLI v6 with Bootstrap and FontAwesome!
+      </p>
+    </div>-->
+  </mat-sidenav-content>
+</mat-sidenav-container>

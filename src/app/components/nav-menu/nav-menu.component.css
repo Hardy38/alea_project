@@ -1,0 +1,36 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.custom-header {
+  width: 100%;
+}
+.custom-content {
+  /*background-color: #e9ecef;*/
+}
+
+.header-btn {
+  margin: 0px 30px;
+}
+
+.header-right-block {
+  text-align: center;
+}
+
+.nav-bar-content-carousel-block {
+  /*width: fit-content;*/
+}
